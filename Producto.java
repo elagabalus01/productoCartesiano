@@ -3,13 +3,13 @@ class Producto
 {
     public static void multiArg(String[] ... args)
     {
-        List<List<String>> result=new ArrayList<List<String>>();
-        List<List<String>> aux;
-        List<String> combinacion;
-        result.add(new List<String>());
+        List<ArrayList<String>> result=new ArrayList<ArrayList<String>>();
+        List<ArrayList<String>> aux;
+        ArrayList<String> combinacion;
+        result.add(new ArrayList<String>());
         for(String[] lista:args)
         {
-            aux=new ArrayList<List<String>>();
+            aux=new ArrayList<ArrayList<String>>();
             for(ArrayList<String> x:result)
             {
                 for(String y:lista)
@@ -25,10 +25,10 @@ class Producto
                 result=aux;
             }
         }
-        // for(ArrayList<String> crap:result)
-        // {
-        //     System.out.println(crap);
-        // }
+        for(ArrayList<String> crap:result)
+        {
+            System.out.println(crap);
+        }
     }
 
     public static void main(String[] args)
@@ -36,8 +36,6 @@ class Producto
         String[] lista1={"a","b"};
         String[] lista2={"c","d"};
         String[] lista3={"e"};
-        System.out.println("Hola mundo");
-        // Producto.multiArg(lista1,lista2,lista3);
-        Producto.multiArg(lista1,lista2);
+        Producto.multiArg(lista1,lista2,lista3);
     }
 }
