@@ -1,7 +1,7 @@
 import java.util.*;
 class Producto
 {
-    public static void multiArg(String[] ... args)
+    public static List<ArrayList<String>> multiArg(String[] ... args)
     {
         List<ArrayList<String>> result=new ArrayList<ArrayList<String>>();
         List<ArrayList<String>> aux;
@@ -25,10 +25,7 @@ class Producto
                 result=aux;
             }
         }
-        for(ArrayList<String> crap:result)
-        {
-            System.out.println(crap);
-        }
+        return result;
     }
 
     public static void main(String[] args)
@@ -36,6 +33,10 @@ class Producto
         String[] lista1={"a","b"};
         String[] lista2={"c","d"};
         String[] lista3={"e"};
-        Producto.multiArg(lista1,lista2,lista3);
+        List<ArrayList<String>> resultado=Producto.multiArg(lista1,lista2,lista3);
+        for(ArrayList<String> crap:resultado)
+        {
+            System.out.println(crap);
+        }
     }
 }
