@@ -1,21 +1,21 @@
 import java.util.*;
 class Producto
 {
-    public static List<ArrayList<String>> productoCartesiano(String[] ... args)
+    public static <E> List<ArrayList<E>> productoCartesiano(E[] ... args)
     {
-        List<ArrayList<String>> result=new ArrayList<ArrayList<String>>();
-        List<ArrayList<String>> aux;
-        ArrayList<String> combinacion;
-        result.add(new ArrayList<String>());
-        for(String[] lista:args)
+        List<ArrayList<E>> result=new ArrayList<ArrayList<E>>();
+        List<ArrayList<E>> aux;
+        ArrayList<E> combinacion;
+        result.add(new ArrayList<E>());
+        for(E[] lista:args)
         {
-            aux=new ArrayList<ArrayList<String>>();
-            for(ArrayList<String> x:result)
+            aux=new ArrayList<ArrayList<E>>();
+            for(ArrayList<E> x:result)
             {
-                for(String y:lista)
+                for(E y:lista)
                 {
-                    combinacion=new ArrayList<String>();
-                    for(String elemento:x)
+                    combinacion=new ArrayList<E>();
+                    for(E elemento:x)
                     {
                         combinacion.add(elemento);
                     }
@@ -27,6 +27,7 @@ class Producto
         }
         return result;
     }
+
     public static void main(String[] args)
     {
         String[] lista1={"a","b"};
